@@ -1,0 +1,155 @@
+{
+    "type": "object",
+    "properties": {
+        "numeroItem": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "descricao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "materialOuServico": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "materialOuServicoNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "valorUnitarioEstimado": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "valorTotal": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "quantidade": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "unidadeMedida": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "orcamentoSigiloso": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "itemCategoriaId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "itemCategoriaNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "patrimonio": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "codigoRegistroImobiliario": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "criterioJulgamentoId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "criterioJulgamentoNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "situacaoCompraItem": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "situacaoCompraItemNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "tipoBeneficio": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "tipoBeneficioNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "incentivoProdutivoBasico": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "dataInclusao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataAtualizacao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "temResultado": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "imagem": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "numeroControlePncpCompra":{
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    }
+}

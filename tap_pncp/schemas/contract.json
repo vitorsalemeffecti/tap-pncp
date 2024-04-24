@@ -1,0 +1,359 @@
+{
+    "type": "object",
+    "properties": {
+        "codigoPaisFornecedor": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "numeroControlePncpCompra": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "usuarioNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "anoContrato": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "tipoContrato": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "nome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "numeroContratoEmpenho": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataAssinatura": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataVigenciaInicio": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataVigenciaFim": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "niFornecedor": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "tipoPessoa": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "orgaoEntidade": {
+            "type": "object",
+            "properties": {
+                "cnpj": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "razaoSocial": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "poderId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "esferaId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "categoriaProcesso": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "nome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dataPublicacaoPncp": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataAtualizacao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "unidadeOrgao": {
+            "type": "object",
+            "properties": {
+                "ufNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "nomeUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ufSigla": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "municipioNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoIbge": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "sequencialContrato": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "informacaoComplementar": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "processo": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "unidadeSubRogada": {
+            "type": "object",
+            "properties": {
+                "ufNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "nomeUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ufSigla": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "municipioNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoIbge": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "orgaoSubRogado": {
+            "type": "object",
+            "properties": {
+                "cnpj": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "razaoSocial": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "poderId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "esferaId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "nomeRazaoSocialFornecedor": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "niFornecedorSubContratado": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "nomeFornecedorSubContratado": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "numeroControlePNCP": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "receita": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "tipoPessoaSubContratada": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "objetoContrato": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "valorInicial": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "numeroParcelas": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "valorParcela": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "valorGlobal": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "valorAcumulado": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "numeroRetificacao": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "identificadorCipi": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "urlCipi": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    }
+}

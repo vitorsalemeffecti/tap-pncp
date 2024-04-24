@@ -1,0 +1,40 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: tap-pncp
+default_environment: test
+environments:
+- name: test
+plugins:
+  extractors:
+  - name: tap-pncp
+    namespace: tap_pncp
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    - about
+    - stream-maps
+    settings:
+    - name: initial_date
+      value: '20240101'
+    - name: final_date
+      value: '20240101'
+    - name: first_page
+      value: 1
+    - name: project_id
+      value: teste
+    - name: url_base
+      value: https://pncp.gov.br/api
+    config:
+      initial_date: '20230111'
+      final_date: '20230111'
+      first_page: 1
+      url_base: https://pncp.gov.br/api
+  - name: tap-github
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-github.git
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl

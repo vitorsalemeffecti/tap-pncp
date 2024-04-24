@@ -1,0 +1,149 @@
+{
+    "type": "object",
+    "properties": {
+        "naturezaJuridicaId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataAtualizacao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "niFornecedor": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "tipoPessoa": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataInclusao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "numeroItem": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "dataCancelamento": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "motivoCancelamento": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "nomeRazaoSocialFornecedor": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "codigoPais": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "porteFornecedorId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "quantidadeHomologada": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "valorUnitarioHomologado": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "valorTotalHomologado": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "percentualDesconto": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "indicadorSubcontratacao": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "ordemClassificacaoSrp": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "dataResultado": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "numeroControlePNCPCompra": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "porteFornecedorNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "situacaoCompraItemResultadoNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "sequencialResultado": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "naturezaJuridicaNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "situacaoCompraItemResultadoId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        }
+    }
+}

@@ -1,0 +1,342 @@
+{
+    "type": "object",
+    "properties": {
+        "valorTotalEstimado": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "valorTotalHomologado": {
+            "type": [
+                "number",
+                "null"
+            ]
+        },
+        "orgaoSubRogado": {
+            "type": "object",
+            "properties": {
+                "cnpj": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "razaoSocial": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "esferaId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "poderId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "unidadeOrgao": {
+            "type": "object",
+            "properties": {
+                "ufNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "nomeUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ufSigla": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "municipioNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoIbge": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "unidadeSubRogada": {
+            "type": "object",
+            "properties": {
+                "ufNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "nomeUnidade": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ufSigla": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "municipioNome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigoIbge": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "numeroCompra": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataAtualizacao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataPublicacaoPncp": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "modalidadeId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "srp": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "anoCompra": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "sequencialCompra": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "orgaoEntidade": {
+            "type": "object",
+            "properties": {
+                "cnpj": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "razaoSocial": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "esferaId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "poderId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "modoDisputaId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "dataInclusao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "amparoLegal": {
+            "type": "object",
+            "properties": {
+                "nome": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "codigo": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "descricao": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dataAberturaProposta": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataEncerramentoProposta": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "informacaoComplementar": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "processo": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "objetoCompra": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "linkSistemaOrigem": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "justificativaPresencial": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "existeResultado": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "numeroControlePNCP": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "orcamentoSigilosoCodigo": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "orcamentoSigilosoDescricao": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "situacaoCompraId": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "situacaoCompraNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "tipoInstrumentoConvocatorioCodigo": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "tipoInstrumentoConvocatorioNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "usuarioNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "modalidadeNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "modoDisputaNome": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    }
+}
