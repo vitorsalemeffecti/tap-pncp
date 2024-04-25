@@ -38,7 +38,7 @@ class ContractsStream(PncpStream):
         params = super().get_url_params(context, next_page_token)
         params['dataInicial'] = self.config.get("initial_date")
         params['dataFinal'] = self.config.get("final_date")
-        logging.info(f'DATA CAPTURA: {params["dataInicial"]}')
+        logging.info(f'AAAAAAA DATA CAPTURA: {params["dataInicial"]}')
         return params
 
     def get_child_context(self, record: dict, context: Optional[dict]) -> dict:
