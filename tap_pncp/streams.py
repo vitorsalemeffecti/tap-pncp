@@ -1,7 +1,8 @@
 """Stream type classes for tap-pncp."""
 import logging
 from pathlib import Path
-from typing import Any, Dict, Optional, Union, List, Iterable, TypeVar
+from typing import Any, Dict, Optional, TypeVar
+import datetime
 
 TPageToken = TypeVar("TPageToken")
 
@@ -19,7 +20,7 @@ class ContractsStream(PncpStream):
     """Contracts stream."""
     name = "pncp_contracts"
     path = "/consulta/v1/contratos"
-    primary_keys = ["numeroControlePNCP", ]
+    primary_keys = ["numeroControlePNCP"]
     replication_key = "dataAtualizacao"
 
     schema_filepath = SCHEMAS_DIR / "contract.json"
@@ -36,9 +37,11 @@ class ContractsStream(PncpStream):
     ) -> Dict[str, Any]:
         """Overrides the super class params adding date keys."""
         params = super().get_url_params(context, next_page_token)
-        params['dataInicial'] = self.config.get("initial_date")
-        params['dataFinal'] = self.config.get("final_date")
-        logging.info(f'AAAAAAA DATA CAPTURA: {params["dataInicial"]}')
+        date_to_capture = datetime.datetime.now() - datetime.timedelta(days=7)
+        date_str = date_to_capture.strftime("%Y%m%d")
+        params['dataInicial'] = date_str
+        params['dataFinal'] = date_str
+        logging.info(f'DATA CAPTURA: {params["dataInicial"]}')
         return params
 
     def get_child_context(self, record: dict, context: Optional[dict]) -> dict:
@@ -61,7 +64,7 @@ class PurchasesStream(PncpStream):
     name = "pncp_purchases"
 
     path = "/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}"
-    primary_keys = ["numeroControlePNCP", ]
+    primary_keys = ["numeroControlePNCP"]
     replication_key = "dataAtualizacao"
     schema_filepath = SCHEMAS_DIR / "purchase.json"
 
@@ -76,9 +79,8 @@ class ItemsStream(PncpStream):
     name = "pncp_items"
 
     path = "/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens"
-    primary_keys = ["numeroControlePncpCompra", "numeroItem", ]
-    replication_key = "dataAtualizacao"  # TODO: discuss about using situacaoCompraItem in place of this date
-
+    primary_keys = ["numeroControlePncpCompra", "numeroItem"]
+    replication_key = "dataAtualizacao"
     schema_filepath = SCHEMAS_DIR / "item.json"
 
     records_jsonpath = "[*]"
@@ -134,7 +136,7 @@ class ItemResultsStream(PncpStream):
 
 
 def extract_ids(purchase_control_id: str) -> dict:
-    pattern = re.compile(r"(\d+)\-\d+\-(\d{6})\/(\d{4})", re.I)
+    pattern = re.compile(r"(\d+)\-\d+\-(\d{6})\/(\d+)", re.I)
     groups = re.findall(pattern, purchase_control_id)[0]
 
     return {
@@ -142,12 +144,3 @@ def extract_ids(purchase_control_id: str) -> dict:
         "sequencial": int(groups[1]),
         "ano": int(groups[2]),
     }
-
-# def should_not_create_child_streams(purchase_control_id:str):
-#     if purchase_control_id in created_purchase_streams:
-#         return True
-#     else:
-#         return False
-
-# def add_to_child_streams_control(purchase_control_id:str):
-#     created_purchase_streams.append(purchase_control_id)

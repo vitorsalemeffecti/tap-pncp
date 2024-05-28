@@ -55,7 +55,6 @@ class TapPncp(Tap):
         """Return a list of discovered streams."""
         return [stream_class(tap=self) for stream_class in STREAM_TYPES]
 
-
-#  need for debugging https://docs.meltano.com/guide/debugging-custom-extractor/#add-a-main-block-in-tappy-of-your-custom-extractor
-if __name__ == "__main__":
-    TapPncp.cli()
+# need for debugging https://docs.meltano.com/guide/debugging-custom-extractor/#add-a-main-block-in-tappy-of-your-custom-extractor
+# if __name__ ==  "__main__":
+#     TapPncp.cli()

@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 
 from singer_sdk.helpers.jsonpath import extract_jsonpath  # type: ignore
+from singer_sdk.exceptions import RetriableAPIError
 from singer_sdk.streams import RESTStream  # type: ignore
 from time import sleep
 
@@ -16,11 +17,11 @@ class PncpStream(RESTStream):
     """Pncp stream class."""
     name = "PncpStream"
     __max_retries = 4
+    __attempt = 1
 
     @property
     def url_base(self) -> str:
         """Return the API URL root, configurable via tap settings."""
-        logging.info(self.config["url_base"])
         return self.config["url_base"]
 
     records_jsonpath = None
@@ -45,7 +46,7 @@ class PncpStream(RESTStream):
             params["pagina"] = next_page_token
         else:
             params["pagina"] = self.config.get("first_page")
-
+            
         return params
 
     def backoff_max_tries(self) -> int:
@@ -54,14 +55,17 @@ class PncpStream(RESTStream):
     def parse_response(self, response: requests.Response) -> Iterable[dict]:
         """Parse the response and return an iterator of result rows."""
 
-        if response.status_code == 204:
+        if response.status_code == 204 or response.status_code == 404:
+            logging.warning(f'Warning on response - status code: {response.status_code}, response: {response}')
             return None
-        elif response.status_code == 503:
-            sleep(30)
-            raise (RuntimeError(self.name, self.context))
+        elif response.status_code >= 500 or response.status_code == 429:
+            sleep(61)
+            logging.error(f'Error on response - status code: {response.status_code}, response: {response}')
+            raise RetriableAPIError(self.name, self.context)
         elif response.status_code >= 300:
-            raise (RuntimeError(self.name, self.context))
-
+            logging.error(f'Error on response - status code: {response.status_code}, response: {response}')
+            raise RuntimeError(self.name, self.context)
+        self.__attempt = 1
         yield from extract_jsonpath(self.records_jsonpath, input=response.json())
 
     def post_process(self, row: dict, context: Optional[dict]) -> dict:
@@ -86,3 +90,6 @@ class PncpStream(RESTStream):
             }
 
         return row
+
+    def response_error_message(self, response: requests.Response) -> str:
+        return str(response.content)
